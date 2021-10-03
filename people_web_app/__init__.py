@@ -3,7 +3,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()  # this creates the SQLAlchemy database instance.
 
-
 def create_app():
     app = Flask(__name__)
 
@@ -47,6 +46,8 @@ def create_app():
 
         repo.repo_instance = repo.DatabaseRepository()
         repo.repo_instance.update_repo()
+
+
 
     with app.app_context():
         from .people_blueprint import people
